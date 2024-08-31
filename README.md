@@ -1,1 +1,9 @@
 # AI-Reception
+This application uses a SentenceTransformer model (all-MiniLM-L6-v2) to generate vector embeddings for different types of emergency situations such as "not breathing," "bleeding," and "choking." These vector embeddings are then stored in a FAISS (Facebook AI Similarity Search) index, which is a library designed for efficient similarity search and clustering of dense vectors. When a user submits an emergency type, the application encodes the query using the same SentenceTransformer model and searches for the most similar vector in the FAISS index to retrieve the relevant emergency response.The FAISS index is particularly suited for this task due to its ability to handle high-dimensional vector searches quickly, making it a powerful tool for real-time applications like emergency response systems. The system also allows users to leave messages and provides an estimated time of arrival (ETA) for a fictional emergency responder named Dr. Adrin, enhancing the user experience with dynamic and responsive features.
+
+Features -
+Emergency Handling: Guides the user to provide details about an emergency and responds with immediate steps to take. Message Handling: Allows users to leave a message for the doctor. Simulated Delay for Emergency Response: Implements a delay to simulate querying a vector database (like Qdrant) for emergency instructions. Location-Based ETA: Provides an estimated time of arrival for the doctor based on the user's location. Dynamic User Interaction: Continuously engages the user by asking follow-up questions.
+
+Technologies Used:
+Flask: A lightweight WSGI web application framework in Python. HTML/CSS: For rendering basic forms and interactions on the front end. Python: The main programming language used. Threading: To simulate a delay in database response without blocking the main thread.
+
